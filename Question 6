@@ -1,0 +1,22 @@
+Implement a function that finds the longest common prefix of a given set of strings.
+
+
+string longestcommonprefix(string nums[],int n){
+	if (n == 0)
+        return "";
+   
+    if (n == 1)
+        return nums[0];
+
+    sort(nums, nums + n);
+
+    int en = min(nums[0].size(),nums[n - 1].size());
+
+    string first = nums[0], last = nums[n - 1];
+    int i = 0;
+    while (i < en && first[i] == last[i])
+        i++;
+
+    string pre = first.substr(0, i);
+    return pre;
+}
