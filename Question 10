@@ -1,0 +1,23 @@
+Check if a number is prime in Rust
+
+
+
+fn find_prime(n: usize) {
+    let mut prime = vec![true; n + 1];
+
+    for p in 2..=n {
+        if prime[p] {
+            let mut i = p * p;
+            while i <= n {
+                prime[i] = false;
+                i += p;
+            }
+        }
+    }
+
+    if prime[n] {
+        println!("Yes, it is a prime");
+    } else {
+        println!("No, it is not a prime");
+    }
+}
