@@ -1,0 +1,10 @@
+Reverse a string in Rust
+
+
+pub fn reverse_string(s: &mut Vec<char>) {
+        let len = s.len();
+        let mid = if len % 2 == 0 { len / 2 } else { (len -1) / 2 };
+        for i in 0..mid {
+            s.swap(i, len-i-1);
+        }
+    }
