@@ -1,0 +1,18 @@
+Find the maximum subarray sum in Rust
+
+
+
+fn max_sub_array(nums: Vec<i32>) -> i32 {
+    let mut sum = i32::MIN;
+    let mut curr_sum = 0;
+
+    for &num in nums.iter() {
+        curr_sum += num;
+        sum = sum.max(curr_sum);
+        if curr_sum < 0 {
+            curr_sum = 0;
+        }
+    }
+
+    sum
+}
