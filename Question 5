@@ -1,0 +1,14 @@
+Given a sorted array of integers, implement a function that returns the median of the array.
+
+
+int findmedian(int nums[],int n){
+	
+    double median;
+    if (n % 2 == 0) {
+        median = (nums[n / 2 - 1] + nums[n / 2]) / 2.0;
+    }
+    else {
+        median = nums[n / 2];
+    }
+    return median;
+}
