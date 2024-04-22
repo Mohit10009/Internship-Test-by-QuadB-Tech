@@ -1,0 +1,17 @@
+Given a sorted array of integers, implement a function that returns the index of the first occurrence of a given number.
+
+int findFirst(int arr[], int n, int x)
+{
+    int idx = -1;
+    for (int i = 0; i < n; i++) {
+        if (x != arr[i])
+            continue;
+        if (idx == -1)
+            idx = i;
+       
+    }
+    if (idx != -1)
+        return idx;
+    else
+        return -1;
+}
