@@ -1,0 +1,28 @@
+Given a string of words, implement a function that returns the shortest word in the string.
+
+
+string find(string s){
+	int len = s.size();
+    int si = 0, ei = 0;
+  
+    int mini = len, min_start_index = 0;
+    string ans;
+    while (ei <= len) 
+    {
+        if (ei < len && s[ei] != ' ')
+            ei++;
+        else 
+        {
+            int curr = ei - si;
+            if (curr < mini) 
+            {
+                mini = curr;
+                min_start_index = si;
+            } 
+            ei++;
+            si = ei;
+        }
+    }
+    ans = s.substr(min_start_index, mini);
+    return ans; 
+}
